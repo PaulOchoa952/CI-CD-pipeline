@@ -44,7 +44,7 @@ jobs:
       - name: Scan for secrets
         uses: gitleaks/gitleaks-action@v3
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   
   scan:
     runs-on: ubuntu-latest
@@ -77,7 +77,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GH_TOKEN }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: docker/build-push-action@v6
         with:
@@ -110,3 +110,5 @@ jobs:
               issue_number: context.issue.number,
               body,
             });
+
+      
