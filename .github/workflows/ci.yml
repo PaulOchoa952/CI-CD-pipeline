@@ -1,5 +1,3 @@
-# Placeholder. Course 1 replaces this file.
-# The finished workflow is course-1/solution/ci.yml.
 name: ci
 
 on:
